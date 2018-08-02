@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Multiplication Table</title>
+      <style>
+         .cell {display: inline-block; width: 30px; height: 30px; text-align: center; border-bottom: 1px solid black; border-right:  1px solid black;}
+         .col-cell {display: inline-block; width: 30px; height: 30px; text-align: center; border-bottom: 1px solid black; border-right:  1px solid black;}
+         .header {background: lightblue;}
+         .column {background: lightblue; text-align: center;}
+      </style>
+   </head>
+   <body>
+      <h1>Multiplication Table</h1>
+      <script>
+         // output the header row
+        document.write('<span class="cell header">X</span>');
+        for(i = 0; i <= 10; i++) {
+            document.write('<span class="cell header">' + i + '</span>');
+        }
+        document.write('<br>');
+        // for(col = 0; col <= 10; col++){
+        //     document.write('<div class="side-cell side">' + col + '</div>');
+        // }
+
+         // TODO: Write two nested for loops to output the rest of the multiplication table
+        // document.write('<table class="side-cell">');
+        for (let row = 0; row <= 10; row++) {
+            document.write('<div class="cell column">' + row + '</div>');
+            for (let col = 0; col <= 10; col++){
+                total = row * col;
+                total = " " + total;
+                if (row == col) {
+                    document.write("<span class='col-cell' style='font-weight: bold'>" + total + "</span>");
+                } else {
+                    document.write("<span class='col-cell'>" + total + "</span>");
+                }
+            }
+            document.write("<br>");
+        }
+        document.write("<br>");
+      </script>
+   </body>
+</html>
